@@ -1,0 +1,10 @@
+Host ec2_web_public
+    HostName <ec2_web_public_ip>
+    User ec2-user
+    IdentityFile ~/.ssh/ec2_web_public_key.pem
+    ForwardAgent yes
+
+Host ec2_app_private
+    HostName <ec2_app_private_ip>
+    User ec2-user
+    ProxyJump ec2_web_public

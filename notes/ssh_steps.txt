@@ -1,0 +1,4 @@
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/ec2_app_key.pem
+ssh-add -L
+ssh -A -i ec2_web_key.pem ec2-user@ec2_web_public_ip
